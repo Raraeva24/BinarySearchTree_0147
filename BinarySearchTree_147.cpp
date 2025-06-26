@@ -111,4 +111,18 @@ public:
         inorder(ptr->rightchild);
     }
 
- 
+     //make preorder method
+     void preorder(Node *ptr)
+    {
+        if (isEmpty())
+        {
+            cout << "tree is empty" << endl;
+            return;
+        }
+        if (ptr == nullptr)
+        return;
+
+        cout << ptr->info << " "; //parent
+        preorder(ptr->leftchild);
+        preorder(ptr->rightchild);
+    }
