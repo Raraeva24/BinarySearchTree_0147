@@ -68,7 +68,7 @@ public:
             return;
         }
 
-        // step 7: if the value in the data field of the new node is greater than that of the parent
+        // step 7: if the value in the data field og the new node is greater than that of the parent
         else if (x > parent->info)
         {
             // 7a: make the right child of the parent point to the new node
@@ -78,3 +78,20 @@ public:
             return;
         }
     }
+
+    void search(int element, Node *&parent, Node *&currentNode)
+    {
+        // this function searches the currentnode of the specified node as well as the current node of its parent
+        currentNode = ROOT;
+        parent = nullptr;
+        while ((currentNode != nullptr) && (currentNode->info != element))
+        {
+            parent = currentNode;
+            if (element = currentNode->info)
+                currentNode = currentNode->leftchild;
+            else
+                currentNode = currentNode->rightchild;
+        }
+    }
+
+    
